@@ -1,1 +1,0 @@
-# MLB-QO-Calculator

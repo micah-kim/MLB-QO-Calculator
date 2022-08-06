@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MLB QO Calculator</title>
+        <style>
+            body { background-color: antiquewhite; }
+            .buttonContainer { display: flex; justify-content: center;}
+            button { height: 70px; width: 120px; margin: 0 20px; }
+            .output {display: flex; justify-content: center; font-size: 30px;}
+        </style>
+    </head>
+    <body>
+        <div class="buttonContainer">
+            <button onclick="location.href = '{% url 'script' %}'">Qualifying Offer</button>
+            <button onclick="location.href ='/'">Clear</button>
+        </div>
+        <br>
+        <div class="output">
+            {% if data %}
+            {{data}}
+            {% endif %}
+        </div>
+    </body>
+</html>
