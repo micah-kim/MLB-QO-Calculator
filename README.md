@@ -7,7 +7,7 @@
 3. Click "Phillies Baseball R&D Questionnaire (Answers).pdf" file
 
 ## Steps (QUESTION B)
-1. Open file on local device, open Terminal (mac) or PowerShell (window)
+1. Open up Terminal (mac) or Shell (window)
 2. cd into the "QUESTION_B" directory
     ```terminal
     user $ source cd QUESTION_B
