@@ -3,21 +3,40 @@
     <head>
         <title>MLB QO Calculator</title>
         <style>
-            body { background-color: antiquewhite; }
+            body {display: flex; flex-direction: column; font-family: Arial, Helvetica, sans-serif;}
+            .siteTitle {width: 100%; display: flex; justify-content: center;}
+            .title {display: flex; text-align: center; background-color: #e8182944; padding: 10px; border-radius: 15px;}
             .buttonContainer { display: flex; justify-content: center;}
-            button { height: 70px; width: 120px; margin: 0 20px; }
+            button { height: 70px; width: 120px; margin: 0 20px; font-size: 17px; border-width: 3px; border-radius: 15px;}
+            button:hover {background-color: #002e7238;}
             .output {display: flex; justify-content: center; font-size: 30px;}
+            .dataOut {display: flex; flex-direction: column; text-align: center; justify-content: center;}
+            .dataOutButton {display: flex; justify-content: center; border-radius: 15px; background-color: #fdf1cc; padding: 25px;}
+            .number {font: bolder; padding: 20px;}
+            .acceptButton:hover {background-color: #aff5aa;}
+            .declineButton:hover {background-color: #f5aaaa;}
         </style>
     </head>
     <body>
+        <div class="siteTitle">
+            <h1 class="title">Philadelphia Phillies Qualifying Offer Calculator</h2>
+        </div>
+
         <div class="buttonContainer">
-            <button onclick="location.href = '{% url 'script' %}'">Qualifying Offer</button>
-            <button onclick="location.href ='/'">Clear</button>
+            <button class="getOffer" onclick="location.href = '{% url 'script' %}'">Qualifying Offer</button>
+            <button class="clear" onclick="location.href ='/'">Clear</button>
         </div>
         <br>
         <div class="output">
             {% if data %}
-            {{data}}
+                <div class="dataOut">
+                    <div class="number">{{data}}</div>
+                    <div class="dataOutButton">
+                        <a href = "mailto:coach@example.com?subject=Accepting the Qualifying Offer" target="_blank" ><button class="acceptButton">Accept</button></a>
+                        <img src="{{ STATIC_URL }}https://i.imgur.com/LmekkPz.png" alt="image of phillies mascot"/>
+                        <a href = "mailto:coach@example.com?subject=Declining the Qualifying Offer" target="_blank" ><button class="declineButton">Decline</button></a>
+                    </div>
+                </div>
             {% endif %}
         </div>
     </body>
